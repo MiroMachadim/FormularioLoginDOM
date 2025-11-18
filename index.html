@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <title>Login</title>
+    </head>
+    <body>
+        <header>
+            <h1>Crie sua conta</h1>
+        </header>
+        <form action="">
+            <label for="email">Email:</label>
+            <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Digite seu Email:"
+            />
+            <label for="senha">Senha:</label>
+            <input
+                type="password"
+                name="senha"
+                id="senha"
+                placeholder="Crie uma Senha:"
+            />
+            <input
+                type="submit"
+                value="verificar"
+                onclick="handleVerification()"
+            />
+        </form>
+
+        <div id="verificacao"></div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
