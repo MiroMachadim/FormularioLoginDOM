@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de Login</title>
+</head>
+<body>
+    <button id = "botao" onclick="validacoes()">Aperte!</button>
+    
+    <input id = "senha" placeholder="Digite sua senha...">
+    
+    <div class="error" id="erro_sem_senha">Digite uma senha</div>
+    <div class="error" id="erro_senha_pequena">Sua senha deve ter no minimo 6 caracteres</div>
+    <div class="error" id="erro_senha_sem_numero">Sua senha deve conter pelomenos um número</div>
+    <div class="error" id="erro_senha_sem_Lmaiuscula">Sua senha deve conter pelomenos uma letra maiúscula</div>
+    <div class="error" id="erro_senha_sem_Lminuscula">Sua senha deve conter pelomenos uma letra minúscula</div>
+    <div class="success" id="senha_correta">Tudo correto na senha!</div>
+
+    <input id = "email" placeholder="Digite seu email...">
+
+    <div class="error" id="erro_sem_email">Digite um email</div>
+    <div class="error" id="erro_email_incompleto">Modelo de email invalido </div>
+    <div class="error" id="erro_email_pequeno">Seu email deve ter no minimo 10 caracteres</div>
+    
+    <div class="success" id="email_correto">Tudo correto no email!</div>
+
+</body>
+<script src="./script.js"></script>
+</html>
