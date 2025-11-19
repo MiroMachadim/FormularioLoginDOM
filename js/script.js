@@ -20,6 +20,7 @@ function erros_email(){
     answerEmail.innerHTML = "";
     
     let counter = 0;
+    validacao[0] = false;
     
     if (email === ""){
         answerEmail.innerHTML = '<p> Informe um E-mail';
@@ -49,6 +50,8 @@ function erros_email(){
             counter++;
         }
         answerEmail.innerHTML = innerHTML;
+        console.log(counter)
+        console.log(email)
     }
 
     if (counter === 3) {
@@ -62,6 +65,7 @@ function erros_senha(){
     answerSenha.innerHTML = "";
 
     let counter = 0;
+    validacao[1] = false;
     
     if (senha === ""){
         answerSenha.innerHTML = '<p> Informe uma senha';
