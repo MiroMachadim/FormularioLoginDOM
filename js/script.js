@@ -18,7 +18,7 @@ function validarInput() {
 function erros_email(){
     let email = document.getElementById("email")?.value;
     answerEmail.innerHTML = "";
-    answerEmail.style.color = "red";
+    
     let counter = 0;
     
     if (email === ""){
@@ -29,14 +29,14 @@ function erros_email(){
         if (email.length < 10){
             innerHTML += '<li> Email deve conter 10+ caracteres';
         } else {
-            innerHTML += '<li style="color: green;"> Email deve conter 10+ caracteres';
+            innerHTML += '<li class="success"> Email deve conter 10+ caracteres';
             counter++;
         }
 
         if (!email.includes("@") || !email.includes(".")) {
             innerHTML += '<li> Email deve conter @ e .';
         } else {
-            innerHTML += '<li style="color: green;"> Email deve conter @ e .';
+            innerHTML += '<li class="success"> Email deve conter @ e .';
             counter++;
         }
     
@@ -45,13 +45,14 @@ function erros_email(){
         if (!regex.test(email)){
             innerHTML += '<li> Email inválido/incompleto';
         } else {
-            innerHTML += '<li style="color: green;"> Email inválido/incompleto';
+            innerHTML += '<li class="success"> Email inválido/incompleto';
             counter++;
         }
         answerEmail.innerHTML = innerHTML;
     }
 
     if (counter === 3) {
+        
         validacao[0] = true;
     }
 }
@@ -59,7 +60,7 @@ function erros_email(){
 function erros_senha(){
     let senha = document.getElementById("senha")?.value;
     answerSenha.innerHTML = "";
-    answerSenha.style.color = "red";
+
     let counter = 0;
     
     if (senha === ""){
@@ -70,7 +71,7 @@ function erros_senha(){
         if (senha.length < 6){
             innerHTML += '<li> Senha deve conter 6+ caracteres ';
         } else {
-            innerHTML += '<li style="color: green;"> Senha deve conter 6+ caracteres';
+            innerHTML += '<li class="success"> Senha deve conter 6+ caracteres';
             counter++;
         }
     
@@ -81,21 +82,21 @@ function erros_senha(){
         if (!temNumero){
             innerHTML += '<li> Senha deve conter número (1, 2 ...)';
         } else {
-            innerHTML += '<li style="color: green;"> Senha deve conter número (1, 2 ...) ';
+            innerHTML += '<li class="success"> Senha deve conter número (1, 2 ...) ';
             counter++;
         }
     
         if (!temMaiuscula){
             innerHTML += '<li> Senha deve conter letra maiúscula';
         } else {
-            innerHTML += '<li style="color: green;"> Senha deve conter letra maiúscula';
+            innerHTML += '<li class="success"> Senha deve conter letra maiúscula';
             counter++;
         }
     
         if (!temMinuscula){
             innerHTML += '<li> Senha deve conter letra minúscula';
         } else {
-            innerHTML += '<li style="color: green;"> Senha deve conter letra minúscula ';
+            innerHTML += '<li class="success"> Senha deve conter letra minúscula ';
             counter++;
         }
         answerSenha.innerHTML = innerHTML;
