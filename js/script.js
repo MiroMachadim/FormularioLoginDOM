@@ -2,10 +2,9 @@ const botao = document.getElementById("botao");
 const answerEmail = document.getElementById("verificacaoEmail");
 const answerSenha = document.getElementById("verificacaoSenha");
 
-function handleVerification(){
-    erros_email();
-    erros_senha();
-    return false;
+function limpar_validacoes(){
+    answerEmail.innerHTML = "";
+    answerSenha.innerHTML = "";
 }
 
 function erros_email(){
@@ -14,16 +13,18 @@ function erros_email(){
     answerEmail.style.color = "red";
 
     if (email === ""){
-        answerEmail.innerHTML += "<p> Sem Email <p/>";
+        answerEmail.innerHTML += '<p> Informe um E-mail <p/>';
     } else {
         if (email.length < 10){
-            answerEmail.innerHTML += "<p> Email Pequeno <p/>";
+            answerEmail.innerHTML += '<p> Email deve conter 10+ caracteres <p/>';
+        } else {
+            answerEmail.innerHTML += '<p style="color: green;"> Email deve conter 10+ caracteres <p/>';
         }
     
         let regex = /^[a-z0-9]+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     
         if (!regex.test(email)){
-            answerEmail.innerHTML += "<p> Email Incompleto <p/>";
+            answerEmail.innerHTML += '<p> Email inválido/incompleto <p/>';
         }
     }
 
@@ -41,11 +42,14 @@ function erros_senha(){
     answerSenha.style.color = "red";
 
     if (senha === ""){
-        answerSenha.innerHTML = "<p> Sem Senha <p/>";
+        answerSenha.innerHTML = '<p> Informe uma senha <p/>';
+        return;
     }
 
     if (senha.length < 6){
-        answerSenha.innerHTML += "<p> Senha Pequena <p/>";
+        answerSenha.innerHTML += '<p> Senha deve conter 6+ caracteres <p/>';
+    } else {
+        answerSenha.innerHTML += '<p style="color: green;"> Senha deve conter 6+ caracteres <p/>';
     }
 
     let temNumero = /[0-9]/.test(senha);
@@ -53,15 +57,21 @@ function erros_senha(){
     let temMinuscula = /[a-z]/.test(senha);
 
     if (!temNumero){
-        answerSenha.innerHTML += "<p> Senha Sem Número <p/>";
+        answerSenha.innerHTML += '<p> Senha deve conter número (1, 2 ...) <p/>';
+    } else {
+        answerSenha.innerHTML += '<p style="color: green;"> Senha deve conter número (1, 2 ...) <p/>';
     }
 
     if (!temMaiuscula){
-        answerSenha.innerHTML += "<p> Senha Sem Letra Maiúscula <p/>";
+        answerSenha.innerHTML += '<p> Senha deve conter letra maiúscula <p/>';
+    } else {
+        answerSenha.innerHTML += '<p style="color: green;"> Senha deve conter letra maiúscula <p/>';
     }
 
     if (!temMinuscula){
-        answerSenha.innerHTML += "<p> Senha Sem Letra Minúscula <p/>";
+        answerSenha.innerHTML += '<p> Senha deve conter letra minúscula <p/>';
+    } else {
+        answerSenha.innerHTML += '<p style="color: green;"> Senha deve conter letra minúscula <p/>';
     }
 
     if (answerSenha.innerHTML.length > 0) {
