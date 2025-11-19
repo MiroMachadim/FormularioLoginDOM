@@ -50,8 +50,6 @@ function erros_email(){
         }
         answerEmail.innerHTML = innerHTML;
     }
-    console.log(answerEmail.innerHTML)
-
 
     if (counter === 3) {
         validacao[0] = true;
@@ -62,7 +60,6 @@ function erros_senha(){
     let senha = document.getElementById("senha")?.value;
     answerSenha.innerHTML = "";
     answerSenha.style.color = "red";
-    
     let counter = 0;
     
     if (senha === ""){
@@ -101,10 +98,8 @@ function erros_senha(){
             innerHTML += '<li style="color: green;"> Senha deve conter letra minúscula ';
             counter++;
         }
-        answerSenha.innerHTML = innerHTML
+        answerSenha.innerHTML = innerHTML;
     }
-    console.log(answerSenha.innerHTML)
-
 
     if (counter === 4) {
         validacao[1] = true;
