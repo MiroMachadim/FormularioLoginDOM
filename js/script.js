@@ -15,24 +15,24 @@ function erros_email(){
 
     if (email === ""){
         answerEmail.innerHTML += "<p> Sem Email <p/>";
+    } else {
+        if (email.length < 10){
+            answerEmail.innerHTML += "<p> Email Pequeno <p/>";
+        }
+    
+        let regex = /^[a-z0-9]+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    
+        if (!regex.test(email)){
+            answerEmail.innerHTML += "<p> Email Incompleto <p/>";
+        }
     }
 
-    if (email.length < 10){
-        answerEmail.innerHTML += "<p> Email Pequeno <p/>";
-    }
-
-    let regex = /^[a-z0-9]+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
-    if (!regex.test(email)){
-        answerEmail.innerHTML += "<p> Email Incompleto <p/>";
-    }
 
     if (answerEmail.innerHTML.length > 0) {
         answerEmail.style.display = "block";
     } else{
         answerEmail.style.display = "none";
     }
-    console.log(answerEmail.innerHTML);
 }
 
 function erros_senha(){
@@ -69,7 +69,6 @@ function erros_senha(){
     } else{
         answerSenha.style.display = "none";
     }
-    console.log(answerSenha.innerHTML);
 }
 
 

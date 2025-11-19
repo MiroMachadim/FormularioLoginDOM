@@ -11,29 +11,33 @@
         <header>
             <h1>Crie sua conta</h1>
         </header>
-        <form onsubmit="return handleVerification()">
-            <label for="email">Email:</label>
-            <input
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Digite seu Email:"
-            />
-            <label for="senha">Senha:</label>
-            <input
-                type="password"
-                name="senha"
-                id="senha"
-                placeholder="Crie uma Senha:"
-            />
-            <input
-                type="submit"
-                value="verificar"
-                id="botao"
-            />
-        </form>
-        <div id="verificacaoEmail"></div>
-        <div id="verificacaoSenha"></div>
+        <main>
+            <form id="formulario" onsubmit="return handleVerification()">
+                <label for="email">Email:</label>
+                <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Digite seu Email:"
+                />
+                <label for="senha">Senha:</label>
+                <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Crie uma Senha:"
+                />
+                <input
+                    type="submit"
+                    value="verificar"
+                    id="botao"
+                />
+            </form>
+            <section id="informacao">
+                <div id="verificacaoEmail"></div>
+                <div id="verificacaoSenha"></div>
+            </section>
+        </main>
 
     </body>
 </html>
