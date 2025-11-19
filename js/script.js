@@ -25,6 +25,8 @@ function erros_email(){
     
         if (!regex.test(email)){
             answerEmail.innerHTML += '<p> Email inválido/incompleto <p/>';
+        } else {
+            answerEmail.innerHTML += '<p style="color: green;"> Email válido <p/>';
         }
     }
 
