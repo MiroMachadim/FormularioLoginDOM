@@ -7,10 +7,20 @@
         <title>Login</title>
     </head>
     <body>
+
+        <section class="background-video"> 
+                <video autoplay loop muted disablepictureinpicture>
+                    <source src="assets/netao.mov">
+                </video>
+           
+
+        </section>
+
         <header>
-            <h1>Crie sua conta</h1>
+            <h1>Faça seu Login</h1>
         </header>
-        <main>
+        <main class="container">
+                
             <form id="formulario" method="post">
                 <label for="email">Email:</label>
                 <input
@@ -28,7 +38,7 @@
                     type="password"
                     name="senha"
                     id="senha"
-                    placeholder="Crie uma Senha:"
+                    placeholder="Digite sua Senha:"
                     onclick="erros_senha()"
                     oninput="erros_senha()"
                     onblur="limpar_validacoes()"
