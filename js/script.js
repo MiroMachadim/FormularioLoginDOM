@@ -1,56 +1,51 @@
-let botao = document.getElementById("botao");
+const botao = document.getElementById("botao");
+const answerEmail = document.getElementById("verificacaoEmail");
+const answerSenha = document.getElementById("verificacaoSenha");
 
-function validacoes(){
-    erros_senha()
-    erros_email()
+function handleVerification(){
+    erros_email();
+    erros_senha();
+    return false;
 }
 
 function erros_email(){
     let email = document.getElementById("email")?.value;
+    answerEmail.innerHTML = " ";
+    answerEmail.style.color = "red";
 
     if (email === ""){
-    document.getElementById("erro_sem_email").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_sem_email").style.display = "none";
+        answerEmail.innerHTML += "<p> Sem Email <p/>";
     }
 
     if (email.length < 10){
-    document.getElementById("erro_email_pequeno").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_email_pequeno").style.display = "none";
+        answerEmail.innerHTML += "<p> Email Pequeno <p/>";
     }
 
     let regex = /^[a-z0-9]+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
     if (!regex.test(email)){
-    document.getElementById("erro_email_incompleto").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_email_incompleto").style.display = "none";
+        answerEmail.innerHTML += "<p> Email Incompleto <p/>";
     }
 
-    if (email !== "" && email.length >= 10 && regex.test(email)){
-        document.getElementById("email_correto").style.display = "block"
+    if (answerEmail.innerHTML.length > 0) {
+        answerEmail.style.display = "block";
+    } else{
+        answerEmail.style.display = "none";
     }
+    console.log(answerEmail.innerHTML);
 }
 
 function erros_senha(){
     let senha = document.getElementById("senha")?.value;
+    answerSenha.innerHTML = "";
+    answerSenha.style.color = "red";
 
     if (senha === ""){
-    document.getElementById("erro_sem_senha").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_sem_senha").style.display = "none";
+        answerSenha.innerHTML = "<p> Sem Senha <p/>";
     }
 
     if (senha.length < 6){
-    document.getElementById("erro_senha_pequena").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_senha_pequena").style.display = "none";
+        answerSenha.innerHTML += "<p> Senha Pequena <p/>";
     }
 
     let temNumero = /[0-9]/.test(senha);
@@ -58,29 +53,23 @@ function erros_senha(){
     let temMinuscula = /[a-z]/.test(senha);
 
     if (!temNumero){
-    document.getElementById("erro_senha_sem_numero").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_senha_sem_numero").style.display = "none";
+        answerSenha.innerHTML += "<p> Senha Sem Número <p/>";
     }
 
     if (!temMaiuscula){
-    document.getElementById("erro_senha_sem_Lmaiuscula").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_senha_sem_Lmaiuscula").style.display = "none";
+        answerSenha.innerHTML += "<p> Senha Sem Letra Maiúscula <p/>";
     }
 
     if (!temMinuscula){
-    document.getElementById("erro_senha_sem_Lminuscula").style.display = "block";
-    }
-    else{
-    document.getElementById("erro_senha_sem_Lminuscula").style.display = "none";
+        answerSenha.innerHTML += "<p> Senha Sem Letra Minúscula <p/>";
     }
 
-    if (senha !== "" && senha.length >= 6 && temNumero && temMaiuscula && temMinuscula){
-        document.getElementById("senha_correta").style.display = "block";
+    if (answerSenha.innerHTML.length > 0) {
+        answerSenha.style.display = "block";
+    } else{
+        answerSenha.style.display = "none";
     }
+    console.log(answerSenha.innerHTML);
 }
 
 

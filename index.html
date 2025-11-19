@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css">
+        <script async src="js/script.js"></script>
         <title>Login</title>
     </head>
     <body>
         <header>
             <h1>Crie sua conta</h1>
         </header>
-        <form action="">
+        <form onsubmit="return handleVerification()">
             <label for="email">Email:</label>
             <input
                 type="text"
@@ -27,12 +29,11 @@
             <input
                 type="submit"
                 value="verificar"
-                onclick="handleVerification()"
+                id="botao"
             />
         </form>
+        <div id="verificacaoEmail"></div>
+        <div id="verificacaoSenha"></div>
 
-        <div id="verificacao"></div>
-
-        <script src="js/script.js"></script>
     </body>
 </html>
