@@ -18,6 +18,7 @@
                     name="email"
                     id="email"
                     placeholder="Digite seu Email:"
+                    onclick="erros_email()"
                     oninput="erros_email()"
                     onblur="limpar_validacoes()"
                 />
@@ -28,6 +29,7 @@
                     name="senha"
                     id="senha"
                     placeholder="Crie uma Senha:"
+                    onclick="erros_senha()"
                     oninput="erros_senha()"
                     onblur="limpar_validacoes()"
                 />
@@ -36,6 +38,7 @@
                     type="submit"
                     value="verificar"
                     id="botao"
+                    onclick="validarInput()"
                 />
             </form>
         </main>
